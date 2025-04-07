@@ -1,0 +1,36 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1 class="text-xl font-semibold mb-4">Login Form</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="Login" class="block font-medium mb-1">Login</label>
+        <input asp-for="Login" class="border rounded px-3 py-2 w-full" />
+        <span asp-validation-for="Login" class="text-red-500 text-sm"></span>
+    </div>
+
+    <div class="mt-4">
+        <label asp-for="Password" class="block font-medium mb-1">Password</label>
+        <input asp-for="Password" type="password" class="border rounded px-3 py-2 w-full" />
+        <span asp-validation-for="Password" class="text-red-500 text-sm"></span>
+    </div>
+
+    <button type="submit" class="mt-6 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        Submit
+    </button>
+</form>
+
+@if (Model.Message != null)
+{
+    <div class="mt-4 p-4 bg-green-100 text-green-800 rounded">
+        @Model.Message
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
