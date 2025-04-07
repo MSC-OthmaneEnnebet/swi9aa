@@ -1,0 +1,6 @@
+<form method="post" action="/auth.nsf?Login">
+<input type="text" size="20" maxlength="256" name="username" id="user-id">
+<input type="password" size="20" maxlength="256" name="password" id="pw-id">
+<input type="hidden" name="redirectto" value="/web/demo.nsf/pgWelcome?Open">
+<input type="submit" value="Log In">
+</form>
